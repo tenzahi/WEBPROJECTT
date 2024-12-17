@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-nous</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+        <header>
+            <h1>Contactez-moi</h1>
+            <nav>
+                <ul> 
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="parcours.html">Mon parcours</a></li>
+                    <li><a href="stage.html">Stages</a></li>
+                    <li><a href="passions.html">Passions</a></li>
+                    <li><a href="comptences.html">Compétences</a></li>
+                    <li><a href="matiers.html">Matières</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="manifest.html">Manifestation</a></li>
+                    <li><a href="temoignage.html">Témoignage</a></li>
+                </ul>
+            </nav>
+        </header>
+
+    <section id="contact">
+        <h2>Envoyez-moi un message</h2>
+        <form action="mailto:monadresse@email.com" method="post" enctype="text/plain">
+            <label for="name">Votre nom :</label>
+            <input type="text" id="name" name="name" placeholder="Entrez votre nom" required>
+
+            <label for="email">Votre email :</label>
+            <input type="email" id="email" name="email" placeholder="Entrez votre adresse email" required>
+
+            <label for="subject">Sujet :</label>
+            <input type="text" id="subject" name="subject" placeholder="Sujet de votre message" required>
+
+            <label for="message">Votre message :</label>
+            <textarea id="message" name="message" placeholder="Écrivez votre message ici" rows="5" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+    <script>
+        document.querySelector('form').addEventListener('submit', function (event) {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+    
+            if (!name || !email || !subject || !message) {
+                alert('Veuillez remplir tous les champs.');
+                event.preventDefault();
+            } else if (!email.includes('@') || !email.includes('.')) {
+                alert('Veuillez entrer une adresse email valide.');
+                event.preventDefault();
+            }
+        });
+    </script>
+    
+</body>
+</html>
